@@ -30,7 +30,10 @@ export default function Hero() {
         <div className="flex justify-center mx-auto px-4 md:px-6 pt-20 md:pt-32">
           <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-[880px]">
             <div className="md:w-1/2 text-white">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium mb-6">
+              <h1
+                className="text-5xl md:text-6xl lg:text-7xl font-regular mb-6 leading-normal"
+                style={{ lineHeight: "1.3" }}
+              >
                 We Protect <br />
                 Yourself. <br />
                 <span className="flex items-center">

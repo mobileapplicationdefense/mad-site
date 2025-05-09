@@ -1,173 +1,190 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect, useRef } from "react";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Features() {
-  const [openAccordion, setOpenAccordion] = useState<string | null>("malware")
+  const [openAccordion, setOpenAccordion] = useState<string | null>("malware");
+  const sectionRef = useRef<HTMLElement>(null);
 
   const toggleAccordion = (id: string) => {
-    setOpenAccordion(openAccordion === id ? null : id)
-  }
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = sectionRef.current;
+    if (section) {
+      const elements = section.querySelectorAll(".animate-on-scroll");
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    return () => {
+      if (section) {
+        const elements = section.querySelectorAll(".animate-on-scroll");
+        elements.forEach((el) => observer.unobserve(el));
+      }
+    };
+  }, []);
 
   return (
-    <section className="h-screen w-full snap-start relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14]">
-      {/* Gradient light effect in bottom right */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0066FF] opacity-10 blur-[150px] rounded-full"></div>
+    <section
+      ref={sectionRef}
+      className="min-h-[200vh] md:min-h-screen w-full snap-start relative overflow-hidden bg-white py-8 md:py-0"
+    >
+      {/* Content container with gradient background and rounded corners */}
+      <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-4 bottom-4 md:top-8 md:bottom-8 lg:top-12 lg:bottom-12 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
+        {/* Background image with reduced opacity */}
+        <div className="absolute inset-0">
+          <Image
+            src="/background.png"
+            alt="Background"
+            fill
+            className="object-cover opacity-10"
+            priority
+          />
+        </div>
 
-      <div className="container mx-auto px-4 md:px-6 h-full flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
-          {/* Left column - Heading */}
-          <div className="text-white">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              One <span className="text-[#0066FF]">Solution</span> For
-              <br />
-              All Your App
-              <br />
-              Security Needs.
-            </h2>
-          </div>
+        {/* Teal/blue glow in bottom right */}
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0066FF] opacity-20 blur-[150px] rounded-full"></div>
 
-          {/* Middle column - Phone mockup */}
-          <div className="flex justify-center">
-            <div className="relative w-[280px] h-[560px] bg-white rounded-[40px] shadow-xl overflow-hidden">
-              {/* Phone status bar */}
-              <div className="absolute top-0 left-0 right-0 h-10 flex items-center justify-between px-6">
-                <div className="w-16 h-2 bg-black rounded-full"></div>
-                <div className="text-xs">9:41</div>
-              </div>
+        {/* Additional smaller glow for depth */}
+        <div className="absolute bottom-[20%] right-[30%] w-[200px] h-[200px] bg-[#00C2FF] opacity-10 blur-[100px] rounded-full"></div>
+      </div>
 
-              {/* App content */}
-              <div className="absolute top-16 left-0 right-0 bottom-16 px-4">
-                <div className="text-black font-medium mb-4 text-lg">App</div>
+      <div className="container mx-auto px-4 md:px-6 h-screen flex flex-col justify-center relative z-10">
+        <div className="flex flex-col justify-around md:flex-row md:items-center">
+          <div className="flex flex-col md:items-center gap-4">
+            {/* Left column - Heading */}
+            <div className="text-white md:flex-[0_0_33%] animate-on-scroll opacity-0 mt-8 md:mt-0">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular mb-4">
+                One <span className="text-[#0066FF]">Solution</span> For
+                <br />
+                All Your App
+                <br />
+                Security Needs.
+              </h2>
+            </div>
 
-                {/* App buttons */}
-                <div className="space-y-4">
-                  <button
-                    className={cn(
-                      "w-full py-3 px-4 rounded-md text-white text-left",
-                      openAccordion === "malware" ? "bg-[#0066FF]" : "bg-[#0066FF]/90",
-                    )}
-                    onClick={() => toggleAccordion("malware")}
-                  >
-                    Malware detection
-                  </button>
-
-                  <button
-                    className={cn(
-                      "w-full py-3 px-4 rounded-md text-white text-left",
-                      openAccordion === "obfuscation" ? "bg-[#0066FF]" : "bg-[#0066FF]/90",
-                    )}
-                    onClick={() => toggleAccordion("obfuscation")}
-                  >
-                    Obfuscation
-                  </button>
-
-                  <button
-                    className={cn(
-                      "w-full py-3 px-4 rounded-md text-white text-left",
-                      openAccordion === "rasp" ? "bg-[#0066FF]" : "bg-[#0066FF]/90",
-                    )}
-                    onClick={() => toggleAccordion("rasp")}
-                  >
-                    RASP
-                  </button>
-                </div>
-              </div>
-
-              {/* Phone navigation bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-black flex justify-center items-center">
-                <div className="w-1/3 h-1 bg-white rounded-full"></div>
+            {/* Middle column - Phone mockup */}
+            <div className="flex justify-center md:flex-[0_0_25%] my-12 md:my-0 animate-on-scroll opacity-0">
+              <div className="relative w-[248px] h-[489px]">
+                <Image
+                  src="/mobile-screen-features.png"
+                  alt="Mobile app security"
+                  width={248}
+                  height={489}
+                  className="object-contain"
+                  priority
+                />
               </div>
             </div>
           </div>
 
           {/* Right column - Text and accordions */}
-          <div className="text-white space-y-6">
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Protect your app, your business, and your users with our all-in-one security suite for mobile and APIs.
-              Using a layered defense strategy, the Full App Safety Suite safeguards against reverse engineering, app
-              replication, device rooting, API misuse, Frida-based attacks, MitM threats, and more. Compatible with iOS,
+          <div className="text-white md:flex-[0_0_42%] animate-on-scroll opacity-0 mb-8 md:mb-0 md:pl-4">
+            <p className="text-gray-300 text-md leading-relaxed mb-8">
+              Protect your app, your business, and your users with our
+              all-in-one security suite for mobile and APIs. Using a layered
+              defense strategy, the Full App Safety Suite safeguards against
+              reverse engineering, app replication, device rooting, API misuse,
+              Frida-based attacks, MitM threats, and more. Compatible with iOS,
               Android, and Flutter platforms.
             </p>
 
             {/* Accordions */}
-            <div className="space-y-3 mt-6">
+            <div className="space-y-4 mt-6">
               <div
                 className={cn(
-                  "border border-gray-700 rounded-md overflow-hidden",
-                  openAccordion === "malware" ? "border-[#0066FF]/50" : "",
+                  "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
+                  openAccordion === "malware" ? "border-[#0066FF]/50" : ""
                 )}
               >
                 <button
                   className="w-full p-4 flex justify-between items-center text-left"
                   onClick={() => toggleAccordion("malware")}
                 >
-                  <span>Malware Detection</span>
+                  <span className="text-gray-100">Malware Detection</span>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 transition-transform",
-                      openAccordion === "malware" ? "transform rotate-180" : "",
+                      "h-5 w-5 transition-transform text-gray-300",
+                      openAccordion === "malware" ? "transform rotate-180" : ""
                     )}
                   />
                 </button>
                 {openAccordion === "malware" && (
                   <div className="p-4 pt-0 text-sm text-gray-400">
-                    Advanced malware detection identifies and blocks harmful code, protecting your app from known and
-                    emerging threats in real-time.
+                    Advanced malware detection identifies and blocks harmful
+                    code, protecting your app from known and emerging threats in
+                    real-time.
                   </div>
                 )}
               </div>
 
               <div
                 className={cn(
-                  "border border-gray-700 rounded-md overflow-hidden",
-                  openAccordion === "obfuscation" ? "border-[#0066FF]/50" : "",
+                  "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
+                  openAccordion === "obfuscation" ? "border-[#0066FF]/50" : ""
                 )}
               >
                 <button
                   className="w-full p-4 flex justify-between items-center text-left"
                   onClick={() => toggleAccordion("obfuscation")}
                 >
-                  <span>Obfuscation</span>
+                  <span className="text-gray-100">Obfuscation</span>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 transition-transform",
-                      openAccordion === "obfuscation" ? "transform rotate-180" : "",
+                      "h-5 w-5 transition-transform text-gray-300",
+                      openAccordion === "obfuscation"
+                        ? "transform rotate-180"
+                        : ""
                     )}
                   />
                 </button>
                 {openAccordion === "obfuscation" && (
                   <div className="p-4 pt-0 text-sm text-gray-400">
-                    Code obfuscation techniques make your app's code difficult to reverse engineer, protecting your
-                    intellectual property and preventing unauthorized access.
+                    Code obfuscation techniques make your app's code difficult
+                    to reverse engineer, protecting your intellectual property
+                    and preventing unauthorized access.
                   </div>
                 )}
               </div>
 
               <div
                 className={cn(
-                  "border border-gray-700 rounded-md overflow-hidden",
-                  openAccordion === "rasp" ? "border-[#0066FF]/50" : "",
+                  "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
+                  openAccordion === "rasp" ? "border-[#0066FF]/50" : ""
                 )}
               >
                 <button
                   className="w-full p-4 flex justify-between items-center text-left"
                   onClick={() => toggleAccordion("rasp")}
                 >
-                  <span>RASP</span>
+                  <span className="text-gray-100">RASP</span>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 transition-transform",
-                      openAccordion === "rasp" ? "transform rotate-180" : "",
+                      "h-5 w-5 transition-transform text-gray-300",
+                      openAccordion === "rasp" ? "transform rotate-180" : ""
                     )}
                   />
                 </button>
                 {openAccordion === "rasp" && (
                   <div className="p-4 pt-0 text-sm text-gray-400">
-                    Runtime Application Self-Protection (RASP) continuously monitors your app during execution,
-                    detecting and preventing attacks in real-time without requiring code modifications.
+                    Runtime Application Self-Protection (RASP) continuously
+                    monitors your app during execution, detecting and preventing
+                    attacks in real-time without requiring code modifications.
                   </div>
                 )}
               </div>
@@ -176,5 +193,5 @@ export default function Features() {
         </div>
       </div>
     </section>
-  )
+  );
 }
