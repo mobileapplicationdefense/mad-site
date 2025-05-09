@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -15,7 +16,12 @@ export default function PhoneScreens() {
   return (
     <div className="relative w-full h-full">
       {/* Phone screen 1 (leftmost) */}
-      <div className="absolute left-0top-0 w-[160px] h-[384px]">
+      <div
+        className={cn(
+          "absolute right-60 top-0 w-[55px] h-[115px]",
+          "md:right-60 md:top-0 md:w-[160px] md:h-[384px]"
+        )}
+      >
         <Image
           src="/phone-screen.svg"
           alt="Phone screen"
@@ -29,7 +35,12 @@ export default function PhoneScreens() {
       </div>
 
       {/* Phone screen 2 */}
-      <div className="absolute left-[30px] top-[20px] w-[160px] h-[384px]">
+      <div
+        className={cn(
+          "absolute left-10 top-[20px] w-[55px] h-[115px] opacity-65",
+          "md:left-0 md:top-[45px] md:w-[160px] md:h-[384px]"
+        )}
+      >
         <Image
           src="/phone-screen.svg"
           alt="Phone screen"
@@ -43,7 +54,12 @@ export default function PhoneScreens() {
       </div>
 
       {/* Phone screen 3 */}
-      <div className="absolute left-[60px] top-[40px] w-[160px] h-[384px]">
+      <div
+        className={cn(
+          "absolute left-[55px] top-[30px] w-[55px] h-[115px] opacity-35",
+          "md:left-[45px] md:top-[70px] md:w-[160px] md:h-[384px]"
+        )}
+      >
         <Image
           src="/phone-screen.svg"
           alt="Phone screen"
@@ -57,7 +73,12 @@ export default function PhoneScreens() {
       </div>
 
       {/* Phone screen 4 (rightmost) */}
-      <div className="absolute left-[90px] top-[60px] w-[160px] h-[384px]">
+      <div
+        className={cn(
+          "absolute left-[80px] top-[40px] w-[55px] h-[115px]",
+          "md:left-[110px] md:top-[110px] md:w-[160px] md:h-[384px]"
+        )}
+      >
         <Image
           src="/phone-screen.svg"
           alt="Phone screen"

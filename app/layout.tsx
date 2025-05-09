@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={dmSans.className}>{children}</body>
+      <body className={dmSans.className} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

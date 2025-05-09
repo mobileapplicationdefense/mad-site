@@ -28,7 +28,7 @@ export default function Hero() {
         <Navbar />
 
         <div className="flex justify-center mx-auto px-4 md:px-6 pt-20 md:pt-32">
-          <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-[960px]">
+          <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-[880px]">
             <div className="md:w-1/2 text-white">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium mb-6">
                 We Protect <br />

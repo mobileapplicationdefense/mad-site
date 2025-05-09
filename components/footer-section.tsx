@@ -1,38 +1,38 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function FooterSection() {
-  const sectionRef = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in")
+            entry.target.classList.add("animate-fade-in");
           }
-        })
+        });
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const section = sectionRef.current
+    const section = sectionRef.current;
     if (section) {
-      const elements = section.querySelectorAll(".animate-on-scroll")
-      elements.forEach((el) => observer.observe(el))
+      const elements = section.querySelectorAll(".animate-on-scroll");
+      elements.forEach((el) => observer.observe(el));
     }
 
     return () => {
       if (section) {
-        const elements = section.querySelectorAll(".animate-on-scroll")
-        elements.forEach((el) => observer.unobserve(el))
+        const elements = section.querySelectorAll(".animate-on-scroll");
+        elements.forEach((el) => observer.unobserve(el));
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <section
@@ -67,11 +67,18 @@ export default function FooterSection() {
       <div className="container mx-auto px-4 md:px-6 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 border-t border-gray-800 animate-on-scroll opacity-0">
           <div className="space-y-6">
-            <Image src="/mad-logo.png" alt="MAD Logo" width={120} height={40} className="object-contain" />
+            <Image
+              src="/mad-logo.png"
+              alt="MAD Logo"
+              width={120}
+              height={40}
+              className="object-contain"
+            />
             <p className="text-gray-400 text-sm max-w-md">
-              MAD (Mobile Application Defense) is a RASP (Runtime Application Self-Protection) cybersecurity solution
-              developed in Brazil to protect mobile applications and SDKs on Android and iOS against reverse
-              engineering, tampering, and attacks.
+              MAD (Mobile Application Defense) is a RASP (Runtime Application
+              Self-Protection) cybersecurity solution developed in Brazil to
+              protect mobile applications and SDKs on Android and iOS against
+              reverse engineering, tampering, and attacks.
             </p>
           </div>
 
@@ -80,17 +87,26 @@ export default function FooterSection() {
               <h3 className="text-white font-medium mb-4">Products</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     About us
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     RASP
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Blog
                   </Link>
                 </li>
@@ -100,17 +116,26 @@ export default function FooterSection() {
               <h3 className="text-white font-medium mb-4">Contact</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Support
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Sales
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Partners
                   </Link>
                 </li>
@@ -120,9 +145,9 @@ export default function FooterSection() {
         </div>
 
         <div className="text-center text-gray-500 text-sm animate-on-scroll opacity-0">
-          &copy;2024 MAD. All Rights Reserved
+          &copy;2025 MAD. All Rights Reserved
         </div>
       </div>
     </section>
-  )
+  );
 }

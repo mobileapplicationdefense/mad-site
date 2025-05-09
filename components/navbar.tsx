@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="w-full py-4 px-4 md:px-6">
+    <nav className="w-full py-4 px-4 md:px-6 max-w-[840px] mx-auto">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image src="/logo.svg" alt="Logo" width={40} height={40} />
@@ -14,15 +14,15 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           <Link
             href="/"
-            className="text-white hover:text-gray-300 transition-colors"
+            className="text-white hover:text-gray-300 transition-colors cursor-pointer"
           >
             Home
           </Link>
-          <div className="flex items-center text-gray-400 hover:text-gray-300 transition-colors">
+          <div className="flex items-center text-gray-400 hover:text-gray-300 transition-colors cursor-pointer">
             Products
             <ChevronDown className="ml-1 h-4 w-4" />
           </div>
-          <div className="flex items-center text-gray-400 hover:text-gray-300 transition-colors">
+          <div className="flex items-center text-gray-400 hover:text-gray-300 transition-colors cursor-pointer">
             Resources
             <ChevronDown className="ml-1 h-4 w-4" />
           </div>
