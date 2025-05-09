@@ -64,12 +64,12 @@ export default function Features() {
         <div className="absolute bottom-[20%] right-[30%] w-[200px] h-[200px] bg-[#00C2FF] opacity-10 blur-[100px] rounded-full"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 h-screen flex flex-col justify-center relative z-10">
+      <div className="container mx-auto px-4 md:px-6 h-auto md:h-screen flex flex-col justify-center relative z-10">
         <div className="flex flex-col justify-around md:flex-row md:items-center">
           <div className="flex flex-col md:items-center gap-4">
             {/* Left column - Heading */}
-            <div className="text-white md:flex-[0_0_33%] animate-on-scroll opacity-0 mt-8 md:mt-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-regular mb-4">
+            <div className="flex justify-center md:flex-[0_0_33%] animate-on-scroll opacity-0 mt-8 md:mt-0">
+              <h2 className="text-3xl lg:text-4xl font-regular text-white mb-4">
                 One <span className="text-[#0066FF]">Solution</span> For
                 <br />
                 All Your App
@@ -79,8 +79,8 @@ export default function Features() {
             </div>
 
             {/* Middle column - Phone mockup */}
-            <div className="flex justify-center md:flex-[0_0_25%] my-12 md:my-0 animate-on-scroll opacity-0">
-              <div className="relative w-[248px] h-[489px]">
+            <div className="flex justify-center md:flex-[0_0_25%] my-4 md:my-0 animate-on-scroll opacity-0">
+              <div className="relative w-[200px] h-[380px] md:h-[489px] md:w-[248px]">
                 <Image
                   src="/mobile-screen-features.png"
                   alt="Mobile app security"
@@ -94,7 +94,7 @@ export default function Features() {
           </div>
 
           {/* Right column - Text and accordions */}
-          <div className="text-white md:flex-[0_0_42%] animate-on-scroll opacity-0 mb-8 md:mb-0 md:pl-4">
+          <div className="text-white md:flex-[0_0_42%] animate-on-scroll opacity-0 mb-8 md:mb-0 px-8 md:px-0 mt-8 md:mt-0">
             <p className="text-gray-300 text-md leading-relaxed mb-8">
               Protect your app, your business, and your users with our
               all-in-one security suite for mobile and APIs. Using a layered
