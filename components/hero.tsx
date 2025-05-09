@@ -21,7 +21,9 @@ export default function Hero() {
           className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#111418]"></div>
+        <div className="absolute inset-0">
+          <div className="absolute bottom-0 left-0 w-[50%] md:w-[400px] h-[50vh] md:h-[400px] bg-[#1c7e94]/70 blur-[80px] md:blur-[120px] rounded-full"></div>
+        </div>
       </div>
 
       <div className="relative z-10">

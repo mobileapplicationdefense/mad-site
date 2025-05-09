@@ -39,17 +39,19 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-[#111418]">
-      {/* Background image with overlay */}
+    <div className="w-full snap-start relative overflow-hidden bg-[#111418]">
+      {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/contact-background.png"
+          src="/background.png"
           alt="Background"
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#111418]/80 to-[#0a0e14]/90"></div>
+        <div className="absolute inset-0">
+          <div className="absolute bottom-0 left-0 w-[50%] md:w-[400px] h-[50vh] md:h-[400px] bg-[#1c7e94]/70 blur-[80px] md:blur-[120px] rounded-full"></div>
+        </div>
       </div>
 
       {/* Blue glow effect */}

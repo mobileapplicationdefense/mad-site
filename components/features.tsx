@@ -58,7 +58,7 @@ export default function Features() {
         </div>
 
         {/* Teal/blue glow in bottom right */}
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0066FF] opacity-20 blur-[150px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#1c7e94] opacity-20 blur-[150px] rounded-full"></div>
 
         {/* Additional smaller glow for depth */}
         <div className="absolute bottom-[20%] right-[30%] w-[200px] h-[200px] bg-[#00C2FF] opacity-10 blur-[100px] rounded-full"></div>
