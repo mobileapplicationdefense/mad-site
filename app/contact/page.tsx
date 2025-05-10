@@ -212,7 +212,7 @@ export default function ContactPage() {
         </form>
 
         <div className="mt-8 text-gray-500 text-sm">
-          &copy;2024 MAD. All Rights Reserved
+          &copy;2025 MAD. All Rights Reserved
         </div>
       </div>
     </div>

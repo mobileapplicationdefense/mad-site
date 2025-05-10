@@ -3,7 +3,8 @@ import {
   AndroidIcon,
   FlutterIcon,
   ReactIcon,
-  WebIcon,
+  CapacitorIcon,
+  CordovaIcon,
 } from "@/components/platform-icons";
 import Navbar from "@/components/navbar";
 import PhoneScreens from "@/components/phone-screens";
@@ -46,22 +47,23 @@ export default function Hero() {
                 </span>
               </h1>
 
-              <div className="flex space-x-6 mt-8 mb-6">
+              <div className="flex items-center space-x-8 mt-8 mb-6">
                 <AppleIcon />
                 <AndroidIcon />
                 <FlutterIcon />
+                <CapacitorIcon />
+                <CordovaIcon />
                 <ReactIcon />
-                <WebIcon />
               </div>
 
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-md">
                 RASP Security. Real-Time Protection.
                 <br />
                 Prevent Fraud.
               </p>
             </div>
 
-            <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
+            <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end ml-[130px] md:ml-0">
               <div className="relative w-[300px] h-[500px]">
                 <PhoneScreens />
               </div>

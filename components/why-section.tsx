@@ -76,9 +76,16 @@ export default function WhySection() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 h-full relative z-10 flex items-center">
-        <div className="flex flex-col md:flex-row w-full">
+        <div
+          className={cn(
+            "flex flex-col md:flex-row w-full",
+            "h-full md:h-auto",
+            "justify-center md:justify-normal",
+            "px-8 md:px-0"
+          )}
+        >
           {/* Left column - Heading and illustration */}
-          <div className="flex-1 flex flex-col justify-center items-center">
+          <div className="w-full flex flex-col justify-center items-center flex-0 md:flex-1">
             <div className="animate-on-scroll opacity-0 transition-opacity duration-700">
               <h2 className="text-3xl md:text-5xl font-medium mb-6 text-[#111418]">
                 Your App
@@ -123,9 +130,9 @@ export default function WhySection() {
           </div>
 
           {/* Right column - Stats */}
-          <div className="flex-1 flex flex-col justify-center space-y-16 md:space-y-14">
+          <div className="flex-1 flex justify-center md:space-y-14 max-h-[500px]">
             {/* Mobile Attacks */}
-            <div className="animate-on-scroll opacity-0 transition-opacity duration-700 delay-150">
+            <div className="flex flex-col justify-start animate-on-scroll opacity-0 transition-opacity duration-700 delay-150">
               <h3 className="text-xl font-bold mb-1">
                 Mobile
                 <br />
@@ -135,35 +142,34 @@ export default function WhySection() {
                 <div className="text-4xl font-bold">+70%</div>
                 <div className="text-sm text-gray-600">growth since 2020</div>
               </div>
-            </div>
-
-            {/* Global Threats */}
-            <div className="animate-on-scroll opacity-0 transition-opacity duration-700 delay-300">
-              <h3 className="text-xl font-bold mb-1">
-                Global
-                <br />
-                <span className="text-[#0066FF]">Threats</span>
-              </h3>
               <div className="mt-4">
                 <div className="text-4xl font-bold">3.9M</div>
                 <div className="text-sm text-gray-600">
                   cyberattacks in Latin America(2024)
                 </div>
               </div>
+            </div>
+
+            {/* Global Threats */}
+            <div className="flex flex-col justify-end animate-on-scroll opacity-0 transition-opacity duration-700 delay-300">
+              <h3 className="text-xl font-bold mb-1">
+                Global
+                <br />
+                <span className="text-[#0066FF]">Threats</span>
+              </h3>
+
               <div className="mt-4">
                 <div className="text-4xl font-bold">161B</div>
                 <div className="text-sm text-gray-600">
                   cyberattacks in 2024
                 </div>
               </div>
-            </div>
-
-            {/* Brazil */}
-            <div className="animate-on-scroll opacity-0 transition-opacity duration-700 delay-450">
-              <h3 className="text-xl font-bold mb-1">Brazil</h3>
-              <div className="mt-2">
-                <div className="text-sm text-gray-600">
-                  Lead in mobile threats
+              <div className="animate-on-scroll opacity-0 transition-opacity duration-700 delay-450">
+                <h3 className="text-xl font-bold mb-1">Brazil</h3>
+                <div className="mt-2">
+                  <div className="text-sm text-gray-600">
+                    Lead in mobile threats
+                  </div>
                 </div>
               </div>
             </div>
