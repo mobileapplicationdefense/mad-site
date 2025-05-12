@@ -11,8 +11,8 @@ export default function Navbar() {
           <Image
             src="/mad-logo.svg"
             alt="MAD Logo"
-            width={40}
-            height={40}
+            width={90}
+            height={35}
             className="object-contain hidden md:block"
           />
 

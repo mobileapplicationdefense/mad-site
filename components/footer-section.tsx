@@ -70,7 +70,7 @@ export default function FooterSection() {
               weak app security.
             </h2>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center bg-[#0066FF] hover:bg-[#0055DD] text-white font-medium py-3 px-6 rounded-full transition-colors mt-6"
             >
               Contact us <ArrowRight className="ml-2 h-5 w-5" />
