@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import PlatformsSection from "./plataforms-section";
+import PlatformsSection from "./platforms-section";
+
 interface FeatureCardProps {
   image: string;
   title: string;
