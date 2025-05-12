@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-
+import PlatformsSection from "./plataforms-section";
 interface FeatureCardProps {
   image: string;
   title: string;
@@ -63,7 +63,7 @@ export default function MadSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen w-full snap-start relative overflow-hidden bg-[#FFFBFF] py-24"
+      className="min-h-screen w-full snap-start relative overflow-hidden bg-[#FFFBFF] pt-24"
     >
       {/* bg */}
       <div className="absolute inset-0 opacity-10 hidden md:block">
@@ -75,7 +75,7 @@ export default function MadSection() {
         />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 py-12">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 animate-on-scroll opacity-0">
           Why <span className="text-blue-500">MAD</span>?
         </h2>
@@ -106,6 +106,8 @@ export default function MadSection() {
           />
         </div>
       </div>
+
+      <PlatformsSection />
     </section>
   );
 }

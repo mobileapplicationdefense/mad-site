@@ -48,12 +48,12 @@ export default function Hero() {
               </h1>
 
               <div className="flex items-center space-x-8 mt-8 mb-6">
-                <AppleIcon />
-                <AndroidIcon />
-                <FlutterIcon />
-                <CapacitorIcon />
-                <CordovaIcon />
-                <ReactIcon />
+                <AppleIcon className="text-[#889BAE]" />
+                <AndroidIcon className="text-[#889BAE]" />
+                <FlutterIcon className="text-[#889BAE]" />
+                <CapacitorIcon className="text-[#889BAE]" />
+                <CordovaIcon className="text-[#889BAE]" />
+                <ReactIcon className="text-[#889BAE]" />
               </div>
 
               <p className="text-gray-400 text-md">

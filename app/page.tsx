@@ -1,9 +1,9 @@
-import Hero from "@/components/hero"
-import Features from "@/components/features"
-import WhySection from "@/components/why-section"
-import MadSection from "@/components/mad-section"
-import FooterSection from "@/components/footer-section"
-
+import Hero from "@/components/hero";
+import Features from "@/components/features";
+import WhySection from "@/components/why-section";
+import MadSection from "@/components/mad-section";
+import FooterSection from "@/components/footer-section";
+import PlatformsSection from "@/components/plataforms-section";
 export default function Home() {
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
@@ -13,5 +13,5 @@ export default function Home() {
       <MadSection />
       <FooterSection />
     </div>
-  )
+  );
 }
