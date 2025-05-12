@@ -37,15 +37,31 @@ export default function FooterSection() {
   return (
     <section
       ref={sectionRef}
-      className="h-screen w-full snap-start relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col"
+      className="h-screen w-full snap-start pt-8 relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col"
     >
-      {/* Gradient light effect in bottom right */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0066FF] opacity-10 blur-[150px] rounded-full"></div>
+      <div className="absolute inset-x-4 top-0 left-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] overflow-hidden">
+        <Image
+          src="/background.png"
+          alt="Background"
+          fill
+          className="object-cover opacity-30"
+          priority
+        />
+        <div className="absolute inset-0">
+          <div className="absolute bottom-0 left-0 w-[50%] md:w-[400px] h-[50vh] md:h-[400px] bg-[#1c7e94]/70 blur-[80px] md:blur-[120px] rounded-full"></div>
+        </div>
+
+        {/* Teal/blue glow in bottom right */}
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#1c7e94] opacity-20 blur-[150px] rounded-full"></div>
+
+        {/* Additional smaller glow for depth */}
+        <div className="absolute bottom-[20%] right-[30%] w-[200px] h-[200px] bg-[#00C2FF] opacity-10 blur-[100px] rounded-full"></div>
+      </div>
 
       {/* Main content */}
       <div className="flex-grow flex items-center justify-center px-4 md:px-6">
         <div className="w-full max-w-4xl mx-auto">
-          <div className="bg-[#1E2530]/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-8 md:p-16 text-center animate-on-scroll opacity-0">
+          <div className="bg-[#1E2530]/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-8 md:p-16 text-center animate-on-scroll">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Stop losing users,
               <br />
@@ -68,7 +84,7 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 border-t border-gray-800 animate-on-scroll opacity-0">
           <div className="space-y-6">
             <Image
-              src="/mad-logo.png"
+              src="/mad-logo.svg"
               alt="MAD Logo"
               width={120}
               height={40}

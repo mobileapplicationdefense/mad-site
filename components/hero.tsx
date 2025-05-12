@@ -41,8 +41,12 @@ export default function Hero() {
                 Yourself. <br />
                 <span className="flex items-center">
                   You{" "}
-                  <span className="text-[#0066FF] border border-[#0066FF] px-4 ml-4">
+                  <span className="relative text-[#0066FF] border border-[#2786CD] px-4 ml-4">
                     Grow
+                    <span className="absolute -top-[3px] -left-[3px] w-1.5 h-1.5 bg-white border border-[#2786CD]"></span>
+                    <span className="absolute -top-[3px] -right-[3px] w-1.5 h-1.5 bg-white border border-[#2786CD]"></span>
+                    <span className="absolute -bottom-[3px] -left-[3px] w-1.5 h-1.5 bg-white border border-[#2786CD]"></span>
+                    <span className="absolute -bottom-[3px] -right-[3px] w-1.5 h-1.5 bg-white border border-[#2786CD]"></span>
                   </span>
                 </span>
               </h1>

@@ -8,7 +8,21 @@ export default function Navbar() {
     <nav className="w-full py-4 px-4 md:px-6 max-w-[840px] mx-auto">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <Image src="/logo.svg" alt="Logo" width={40} height={40} />
+          <Image
+            src="/mad-logo.svg"
+            alt="MAD Logo"
+            width={40}
+            height={40}
+            className="object-contain hidden md:block"
+          />
+
+          <Image
+            src="/logo.svg"
+            alt="MAD Logo"
+            width={40}
+            height={40}
+            className="object-contain block md:hidden"
+          />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
