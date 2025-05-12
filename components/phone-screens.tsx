@@ -31,6 +31,7 @@ export default function PhoneScreens() {
           style={{
             filter: "hue-rotate(-10deg) brightness(1.05)",
           }}
+          priority
         />
       </div>
 
@@ -50,6 +51,7 @@ export default function PhoneScreens() {
           style={{
             filter: "hue-rotate(-5deg) brightness(1)",
           }}
+          priority
         />
       </div>
 
@@ -69,6 +71,7 @@ export default function PhoneScreens() {
           style={{
             filter: "hue-rotate(0deg) brightness(0.95)",
           }}
+          priority
         />
       </div>
 
@@ -88,6 +91,7 @@ export default function PhoneScreens() {
           style={{
             filter: "hue-rotate(5deg) brightness(0.9)",
           }}
+          priority
         />
       </div>
 

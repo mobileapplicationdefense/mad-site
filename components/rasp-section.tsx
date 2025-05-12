@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function RaspSection() {
-  const [openAccordion, setOpenAccordion] = useState<string | null>("malware");
+  const [openAccordion, setOpenAccordion] = useState<string | null>("root");
   const sectionRef = useRef<HTMLElement>(null);
 
   const toggleAccordion = (id: string) => {
@@ -64,16 +64,19 @@ export default function RaspSection() {
         <div className="absolute bottom-[20%] right-[30%] w-[200px] h-[200px] bg-[#00C2FF] opacity-10 blur-[100px] rounded-full"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 h-auto md:h-screen flex flex-col justify-center relative z-10">
+      <div className="container mx-auto py-14 px-4 md:px-6 h-auto md:h-screen flex flex-col justify-center relative z-10">
         <div className="flex flex-col justify-around md:flex-row md:items-center">
           <div className="flex flex-col md:items-center gap-4">
             <div className="flex justify-center md:flex-[0_0_25%] my-4 md:my-0 animate-on-scroll opacity-0">
-              <div className="relative w-[200px] h-[380px] md:h-[489px] md:w-[248px]">
+              <div className="relative w-[320px] h-[420px] md:w-[470px] md:h-[520px]">
+                <span className="text-white text-4xl font-regular md:hidden w-full text-center justify-center flex py-10">
+                  RASP
+                </span>
                 <Image
                   src="/rasp-img.png"
                   alt="Mobile app security"
-                  width={248}
-                  height={489}
+                  width={470}
+                  height={520}
                   className="object-contain"
                   priority
                 />
@@ -82,40 +85,99 @@ export default function RaspSection() {
           </div>
 
           {/* Right column - Text and accordions */}
-          <div className="text-white md:flex-[0_0_42%] animate-on-scroll opacity-0 mb-8 md:mb-0 px-8 md:px-0 mt-8 md:mt-0">
-            <p className="text-gray-300 text-md leading-relaxed mb-8">
-              Protect your app, your business, and your users with our
-              all-in-one security suite for mobile and APIs. Using a layered
-              defense strategy, the Full App Safety Suite safeguards against
-              reverse engineering, app replication, device rooting, API misuse,
-              Frida-based attacks, MitM threats, and more. Compatible with iOS,
-              Android, and Flutter platforms.
-            </p>
+          <div className="text-white md:flex-[0_0_42%] flex flex-col items-center animate-on-scroll opacity-0 mb-8 md:mb-0 px-8 md:px-0 mt-8 md:mt-0">
+            <span className="block font-medium text-2xl md:text-4xl leading-relaxed mb-8 max-w-[220px] md:max-w-[520px] mt-10 md:mt-0">
+              Rasp(Runtime Application Self Protection)
+            </span>
 
             {/* Accordions */}
-            <div className="space-y-4 mt-6">
+            <div className="w-full space-y-4 mt-6">
               <div
                 className={cn(
                   "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
-                  openAccordion === "malware" ? "border-[#0066FF]/50" : ""
+                  openAccordion === "root" ? "border-[#0066FF]/50" : ""
                 )}
               >
                 <button
                   className="w-full p-4 flex justify-between items-center text-left"
-                  onClick={() => toggleAccordion("malware")}
+                  onClick={() => toggleAccordion("root")}
                 >
-                  <span className="text-gray-100">Malware Detection</span>
+                  <span className="text-gray-100">
+                    Root and Jailbreak defense
+                  </span>
                   <ChevronDown
                     className={cn(
                       "h-5 w-5 transition-transform text-gray-300",
-                      openAccordion === "malware" ? "transform rotate-180" : ""
+                      openAccordion === "root" ? "transform rotate-180" : ""
                     )}
                   />
                 </button>
-                {openAccordion === "malware" && (
+                {openAccordion === "root" && (
                   <div className="p-4 pt-0 text-sm text-gray-400">
-                    Advanced malware detection identifies and blocks harmful
-                    code, protecting your app from known and emerging threats in
+                    Detect and respond to rooted or jailbroken devices,
+                    protecting your app from unauthorized access and potential
+                    security vulnerabilities.
+                  </div>
+                )}
+              </div>
+
+              <div
+                className={cn(
+                  "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
+                  openAccordion === "anti-reverse" ? "border-[#0066FF]/50" : ""
+                )}
+              >
+                <button
+                  className="w-full p-4 flex justify-between items-center text-left"
+                  onClick={() => toggleAccordion("anti-reverse")}
+                >
+                  <span className="text-gray-100">
+                    Anti-reverse engineering at runtime
+                  </span>
+                  <ChevronDown
+                    className={cn(
+                      "h-5 w-5 transition-transform text-gray-300",
+                      openAccordion === "anti-reverse"
+                        ? "transform rotate-180"
+                        : ""
+                    )}
+                  />
+                </button>
+                {openAccordion === "anti-reverse" && (
+                  <div className="p-4 pt-0 text-sm text-gray-400">
+                    Implement dynamic protections that prevent reverse
+                    engineering attempts during runtime, safeguarding your app's
+                    intellectual property.
+                  </div>
+                )}
+              </div>
+
+              <div
+                className={cn(
+                  "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
+                  openAccordion === "integrity" ? "border-[#0066FF]/50" : ""
+                )}
+              >
+                <button
+                  className="w-full p-4 flex justify-between items-center text-left"
+                  onClick={() => toggleAccordion("integrity")}
+                >
+                  <span className="text-gray-100">
+                    Integrity checks in real time
+                  </span>
+                  <ChevronDown
+                    className={cn(
+                      "h-5 w-5 transition-transform text-gray-300",
+                      openAccordion === "integrity"
+                        ? "transform rotate-180"
+                        : ""
+                    )}
+                  />
+                </button>
+                {openAccordion === "integrity" && (
+                  <div className="p-4 pt-0 text-sm text-gray-400">
+                    Continuously verify the integrity of your app during
+                    execution, detecting and preventing tampering attempts in
                     real-time.
                   </div>
                 )}
@@ -124,28 +186,29 @@ export default function RaspSection() {
               <div
                 className={cn(
                   "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
-                  openAccordion === "obfuscation" ? "border-[#0066FF]/50" : ""
+                  openAccordion === "os-security" ? "border-[#0066FF]/50" : ""
                 )}
               >
                 <button
                   className="w-full p-4 flex justify-between items-center text-left"
-                  onClick={() => toggleAccordion("obfuscation")}
+                  onClick={() => toggleAccordion("os-security")}
                 >
-                  <span className="text-gray-100">Obfuscation</span>
+                  <span className="text-gray-100">
+                    OS security status verification
+                  </span>
                   <ChevronDown
                     className={cn(
                       "h-5 w-5 transition-transform text-gray-300",
-                      openAccordion === "obfuscation"
+                      openAccordion === "os-security"
                         ? "transform rotate-180"
                         : ""
                     )}
                   />
                 </button>
-                {openAccordion === "obfuscation" && (
+                {openAccordion === "os-security" && (
                   <div className="p-4 pt-0 text-sm text-gray-400">
-                    Code obfuscation techniques make your app's code difficult
-                    to reverse engineer, protecting your intellectual property
-                    and preventing unauthorized access.
+                    Assess the security posture of the underlying operating
+                    system, ensuring your app operates in a secure environment.
                   </div>
                 )}
               </div>
@@ -153,26 +216,59 @@ export default function RaspSection() {
               <div
                 className={cn(
                   "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
-                  openAccordion === "rasp" ? "border-[#0066FF]/50" : ""
+                  openAccordion === "ui-protection" ? "border-[#0066FF]/50" : ""
                 )}
               >
                 <button
                   className="w-full p-4 flex justify-between items-center text-left"
-                  onClick={() => toggleAccordion("rasp")}
+                  onClick={() => toggleAccordion("ui-protection")}
                 >
-                  <span className="text-gray-100">RASP</span>
+                  <span className="text-gray-100">UI layer protection</span>
                   <ChevronDown
                     className={cn(
                       "h-5 w-5 transition-transform text-gray-300",
-                      openAccordion === "rasp" ? "transform rotate-180" : ""
+                      openAccordion === "ui-protection"
+                        ? "transform rotate-180"
+                        : ""
                     )}
                   />
                 </button>
-                {openAccordion === "rasp" && (
+                {openAccordion === "ui-protection" && (
                   <div className="p-4 pt-0 text-sm text-gray-400">
-                    Runtime Application Self-Protection (RASP) continuously
-                    monitors your app during execution, detecting and preventing
-                    attacks in real-time without requiring code modifications.
+                    Safeguard your app's user interface from overlay attacks and
+                    screen capture attempts, protecting sensitive information
+                    displayed on screen.
+                  </div>
+                )}
+              </div>
+
+              <div
+                className={cn(
+                  "border border-gray-700/50 rounded-md overflow-hidden bg-[#111418]/30 backdrop-blur-sm",
+                  openAccordion === "remote-sdk" ? "border-[#0066FF]/50" : ""
+                )}
+              >
+                <button
+                  className="w-full p-4 flex justify-between items-center text-left"
+                  onClick={() => toggleAccordion("remote-sdk")}
+                >
+                  <span className="text-gray-100">
+                    Remote SDK setup and control
+                  </span>
+                  <ChevronDown
+                    className={cn(
+                      "h-5 w-5 transition-transform text-gray-300",
+                      openAccordion === "remote-sdk"
+                        ? "transform rotate-180"
+                        : ""
+                    )}
+                  />
+                </button>
+                {openAccordion === "remote-sdk" && (
+                  <div className="p-4 pt-0 text-sm text-gray-400">
+                    Configure and manage security features remotely, enabling
+                    dynamic updates to protection measures without requiring app
+                    updates.
                   </div>
                 )}
               </div>
