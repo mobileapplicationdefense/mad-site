@@ -12,7 +12,7 @@ interface FeatureCardProps {
 
 function FeatureCard({ image, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-md animate-on-scroll opacity-0 transition-all duration-700 h-full">
+    <div className="bg-white rounded-xl p-6 shadow-md transition-all duration-700 h-full z-10">
       <div className="bg-blue-50 w-32 h-48 rounded-lg flex items-center justify-center mb-6 mx-auto">
         <Image
           src={image || "/placeholder.svg"}
@@ -29,43 +29,8 @@ function FeatureCard({ image, title, description }: FeatureCardProps) {
 }
 
 export default function MadSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = sectionRef.current;
-    if (section) {
-      const elements = section.querySelectorAll(".animate-on-scroll");
-      elements.forEach((el, index) => {
-        // Add increasing delay based on index
-        el.classList.add(`delay-${index * 150}`);
-        observer.observe(el);
-      });
-    }
-
-    return () => {
-      if (section) {
-        const elements = section.querySelectorAll(".animate-on-scroll");
-        elements.forEach((el) => observer.unobserve(el));
-      }
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-screen w-full snap-start relative overflow-hidden bg-[#FFFBFF] pt-24"
-    >
+    <section className="min-h-screen w-full relative overflow-hidden bg-[#FFFBFF] pt-24">
       {/* bg */}
       <div className="absolute inset-0 opacity-10 hidden md:block">
         <Image
@@ -77,7 +42,7 @@ export default function MadSection() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 py-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 animate-on-scroll opacity-0">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
           Why <span className="text-blue-500">MAD</span>?
         </h2>
 

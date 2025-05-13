@@ -1,15 +1,25 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Check } from "lucide-react";
 
 export default function Pricing() {
   return (
-    <section className="h-screen w-full flex items-center justify-center snap-start bg-white">
+    <section className="h-screen w-full flex items-center justify-center bg-white">
       <div className="container px-4 md:px-6 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Simple, Transparent Pricing
+          </h2>
           <p className="text-lg text-gray-500 max-w-[800px] mx-auto">
-            Choose the plan that's right for you and start improving your workflow today.
+            Choose the plan that's right for you and start improving your
+            workflow today.
           </p>
         </div>
 
@@ -17,7 +27,11 @@ export default function Pricing() {
           {pricingPlans.map((plan, index) => (
             <Card
               key={index}
-              className={`flex flex-col ${plan.featured ? "border-primary shadow-lg scale-105" : "border-gray-200"}`}
+              className={`flex flex-col ${
+                plan.featured
+                  ? "border-primary shadow-lg scale-105"
+                  : "border-gray-200"
+              }`}
             >
               <CardHeader>
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
@@ -38,7 +52,10 @@ export default function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" variant={plan.featured ? "default" : "outline"}>
+                <Button
+                  className="w-full"
+                  variant={plan.featured ? "default" : "outline"}
+                >
                   {plan.buttonText}
                 </Button>
               </CardFooter>
@@ -47,7 +64,7 @@ export default function Pricing() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 const pricingPlans = [
@@ -55,7 +72,12 @@ const pricingPlans = [
     name: "Starter",
     description: "Perfect for individuals and small teams",
     price: 29,
-    features: ["Up to 5 users", "Basic analytics", "24/7 support", "1GB storage"],
+    features: [
+      "Up to 5 users",
+      "Basic analytics",
+      "24/7 support",
+      "1GB storage",
+    ],
     buttonText: "Get Started",
     featured: false,
   },
@@ -63,7 +85,13 @@ const pricingPlans = [
     name: "Professional",
     description: "Ideal for growing businesses",
     price: 79,
-    features: ["Up to 20 users", "Advanced analytics", "Priority support", "10GB storage", "Custom integrations"],
+    features: [
+      "Up to 20 users",
+      "Advanced analytics",
+      "Priority support",
+      "10GB storage",
+      "Custom integrations",
+    ],
     buttonText: "Start Free Trial",
     featured: true,
   },
@@ -82,4 +110,4 @@ const pricingPlans = [
     buttonText: "Contact Sales",
     featured: false,
   },
-]
+];

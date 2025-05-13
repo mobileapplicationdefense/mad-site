@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="h-screen w-full snap-start relative overflow-hidden bg-[#111418]">
+    <section className="h-screen w-full relative overflow-hidden bg-[#111418]">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <Image

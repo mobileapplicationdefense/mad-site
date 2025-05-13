@@ -6,40 +6,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function FooterSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = sectionRef.current;
-    if (section) {
-      const elements = section.querySelectorAll(".animate-on-scroll");
-      elements.forEach((el) => observer.observe(el));
-    }
-
-    return () => {
-      if (section) {
-        const elements = section.querySelectorAll(".animate-on-scroll");
-        elements.forEach((el) => observer.unobserve(el));
-      }
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="h-screen w-full snap-start pt-8 relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col"
-    >
-      <div className="absolute inset-x-4 top-0 left-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] overflow-hidden">
+    <section className="h-screen w-full snap-start pt-8 relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col">
+      <div className="absolute inset-x-4 top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] overflow-hidden">
         <Image
           src="/background.png"
           alt="Background"
@@ -80,8 +49,8 @@ export default function FooterSection() {
       </div>
 
       {/* Footer */}
-      <div className="container mx-auto px-4 md:px-6 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 border-t border-gray-800 animate-on-scroll opacity-0">
+      <div className="container mx-auto px-4 md:px-6 pb-8 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 border-t border-gray-800">
           <div className="space-y-6">
             <Image
               src="/mad-logo.svg"
@@ -160,7 +129,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="text-center text-gray-500 text-sm animate-on-scroll opacity-0">
+        <div className="text-center text-gray-500 text-sm">
           &copy;2025 MAD. All Rights Reserved
         </div>
       </div>

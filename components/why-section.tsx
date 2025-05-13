@@ -37,7 +37,7 @@ export default function WhySection() {
   return (
     <section
       ref={sectionRef}
-      className="h-screen w-full snap-start relative overflow-hidden bg-white"
+      className="h-screen w-full relative overflow-hidden bg-white"
     >
       {/* Background elements */}
       <div className="absolute inset-0 z-0">

@@ -7,43 +7,13 @@ import Image from "next/image";
 
 export default function Features() {
   const [openAccordion, setOpenAccordion] = useState<string | null>("malware");
-  const sectionRef = useRef<HTMLElement>(null);
 
   const toggleAccordion = (id: string) => {
     setOpenAccordion(openAccordion === id ? null : id);
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = sectionRef.current;
-    if (section) {
-      const elements = section.querySelectorAll(".animate-on-scroll");
-      elements.forEach((el) => observer.observe(el));
-    }
-
-    return () => {
-      if (section) {
-        const elements = section.querySelectorAll(".animate-on-scroll");
-        elements.forEach((el) => observer.unobserve(el));
-      }
-    };
-  }, []);
-
   return (
-    <section
-      ref={sectionRef}
-      className="min-h-[100vh] w-full snap-start relative overflow-hidden bg-white py-8 md:py-0"
-    >
+    <section className="min-h-[100vh] w-full relative overflow-hidden bg-white py-8 md:py-0">
       {/* Content container with gradient background and rounded corners */}
       <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-4 bottom-4 md:top-8 md:bottom-8 lg:top-12 lg:bottom-12 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
         {/* Background image with reduced opacity */}
@@ -68,7 +38,7 @@ export default function Features() {
         <div className="flex flex-col justify-around md:flex-row md:items-center">
           <div className="flex flex-col md:items-center gap-4">
             {/* Left column - Heading */}
-            <div className="flex justify-center md:flex-[0_0_33%] animate-on-scroll opacity-0 mt-8 md:mt-0">
+            <div className="flex justify-center md:flex-[0_0_33%] mt-8 md:mt-0">
               <h2 className="text-3xl lg:text-4xl font-regular text-white mb-4">
                 One <span className="text-[#0066FF]">Solution</span> For
                 <br />
@@ -79,7 +49,7 @@ export default function Features() {
             </div>
 
             {/* Middle column - Phone mockup */}
-            <div className="flex justify-center md:flex-[0_0_25%] my-4 md:my-0 animate-on-scroll opacity-0">
+            <div className="flex justify-center md:flex-[0_0_25%] my-4 md:my-0">
               <div className="relative w-[200px] h-[380px] md:h-[489px] md:w-[248px]">
                 <Image
                   src="/mobile-screen-features.png"
@@ -94,7 +64,7 @@ export default function Features() {
           </div>
 
           {/* Right column - Text and accordions */}
-          <div className="text-white md:flex-[0_0_42%] animate-on-scroll opacity-0 mb-8 md:mb-0 px-8 md:px-0 mt-8 md:mt-0">
+          <div className="text-white md:flex-[0_0_42%] mb-8 md:mb-0 px-8 md:px-0 mt-8 md:mt-0">
             <p className="text-gray-300 text-md leading-relaxed mb-8">
               Protect your app, your business, and your users with our
               all-in-one security suite for mobile and APIs. Using a layered

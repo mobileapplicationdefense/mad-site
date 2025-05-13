@@ -46,7 +46,7 @@ export default function PlatformsSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full snap-start relative overflow-hidden bg-[#ffffff] py-24"
+      className="w-full relative overflow-hidden bg-[#ffffff] py-24"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         <h2 className="text-5xl font-medium text-center mb-20 animate-on-scroll">

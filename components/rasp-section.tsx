@@ -42,7 +42,7 @@ export default function RaspSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[100vh] w-full snap-start relative overflow-hidden bg-white py-8 md:py-0"
+      className="min-h-[100vh] w-full relative overflow-hidden bg-white py-8 md:py-0"
     >
       {/* Content container with gradient background and rounded corners */}
       <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-4 bottom-4 md:top-8 md:bottom-8 lg:top-12 lg:bottom-12 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
