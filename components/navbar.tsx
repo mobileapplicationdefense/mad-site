@@ -1,28 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import MadLogo from "./MadLogo";
 
 export default function Navbar() {
   return (
     <nav className="w-full py-4 px-4 md:px-6 max-w-[840px] mx-auto">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <Image
-            src="/mad-logo.svg"
-            alt="MAD Logo"
-            width={90}
-            height={35}
-            className="object-contain hidden md:block"
-          />
-
-          <Image
-            src="/logo.svg"
-            alt="MAD Logo"
-            width={40}
-            height={40}
-            className="object-contain block md:hidden"
-          />
+          <MadLogo />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">

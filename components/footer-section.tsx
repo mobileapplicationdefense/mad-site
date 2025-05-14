@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
+import MadLogo from "./MadLogo";
 export default function FooterSection() {
   return (
     <section className="h-screen w-full snap-start pt-8 relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col">
@@ -50,16 +50,10 @@ export default function FooterSection() {
 
       {/* Footer */}
       <div className="container mx-auto px-4 md:px-6 pb-8 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 border-t border-gray-800">
-          <div className="space-y-6">
-            <Image
-              src="/mad-logo.svg"
-              alt="MAD Logo"
-              width={120}
-              height={40}
-              className="object-contain"
-            />
-            <p className="text-gray-400 text-sm max-w-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+          <div className="space-y-6 w-full items-center justify-center flex flex-col md:items-start">
+            <MadLogo />
+            <p className="text-gray-400 text-sm max-w-md px-4 md:px-0">
               MAD (Mobile Application Defense) is a RASP (Runtime Application
               Self-Protection) cybersecurity solution developed in Brazil to
               protect mobile applications and SDKs on Android and iOS against
@@ -67,10 +61,17 @@ export default function FooterSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-4 items-center justify-center">
             <div>
-              <h3 className="text-white font-medium mb-4">Products</h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-center">
+                <li>
+                  <Link
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Products
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="#"
@@ -93,35 +94,6 @@ export default function FooterSection() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Blog
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-white font-medium mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Support
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Sales
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Partners
                   </Link>
                 </li>
               </ul>
