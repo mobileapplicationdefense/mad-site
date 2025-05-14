@@ -51,6 +51,7 @@ export default function ContactPage() {
           title: formData.title,
           phone: formData.phone,
           message: formData.message,
+          requestQuote: formData.requestQuote,
         }),
       });
 
@@ -108,12 +109,12 @@ export default function ContactPage() {
           <X className="h-6 w-6" />
         </button>
 
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-12">
-          Contact us
-        </h1>
-
         <form onSubmit={handleSubmit} className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h1 className="text-4xl md:text-5xl font-regular text-white mb-12">
+            Contact us
+          </h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="space-y-2">
               <label htmlFor="firstName" className="text-white text-sm">
                 First name*
@@ -232,39 +233,44 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <button
-              type="submit"
-              disabled={formSubmitting}
-              className={`${
-                formSubmitting
-                  ? "bg-gray-500"
-                  : "bg-[#0066FF] hover:bg-[#0055DD]"
-              } text-white font-medium py-3 px-8 rounded-md flex items-center transition-colors`}
-            >
-              {formSubmitting ? "Submitting..." : "Submit"}{" "}
-              {!formSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
-            </button>
+            <div className="flex items-center justify-between gap-8">
+              <button
+                type="submit"
+                disabled={formSubmitting}
+                className={`${
+                  formSubmitting
+                    ? "bg-gray-500"
+                    : "bg-[#0066FF] hover:bg-[#0055DD]"
+                } text-white font-medium py-3 px-8 rounded-md flex items-center transition-colors`}
+              >
+                {formSubmitting ? "Submitting..." : "Submit"}{" "}
+                {!formSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
+              </button>
+
+              <p className="text-gray-400 text-xs md:text-sm text-center mt-4 max-w-[500px]">
+                By pressing this buttom this form, you are confirming you have
+                read and agree to our{" "}
+                <Link href="#" className="text-[#0066FF] hover:underline">
+                  General Terms
+                </Link>{" "}
+                and{" "}
+                <Link href="#" className="text-[#0066FF] hover:underline">
+                  Privacy Policy
+                </Link>
+              </p>
+            </div>
 
             {formError && <p className="text-red-500 mt-2">{formError}</p>}
 
             {formSuccess && (
-              <div className="mt-4 p-4 bg-green-100 text-green-800 rounded-md">
-                Thank you for your message! We've received your inquiry and will
-                get back to you shortly.
+              <div className="mt-4 p-4 bg-gradient-to-r from-[hsla(216,100%,73%,1)] to-[#0066FF] text-white rounded-md font-regular text-center relative overflow-hidden">
+                <div className="absolute top-[-50%] left-[-50%] w-[10%] h-[200%] bg-white/5 blur-[30px] rounded-full"></div>
+                <div className="absolute bottom-[-50%] right-[-50%] w-[10%] h-[200%] bg-white/10 blur-[50px] rounded-full"></div>
+                <span className="relative z-10">
+                  We have received your request.
+                </span>
               </div>
             )}
-
-            <p className="text-gray-400 text-xs mt-4">
-              By pressing this buttom this form, you are confirming you have
-              read and agree to our{" "}
-              <Link href="#" className="text-[#0066FF] hover:underline">
-                General Terms
-              </Link>{" "}
-              and{" "}
-              <Link href="#" className="text-[#0066FF] hover:underline">
-                Privacy Policy
-              </Link>
-            </p>
           </div>
         </form>
 

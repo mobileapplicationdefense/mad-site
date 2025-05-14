@@ -5,7 +5,7 @@ import ContactEmailTemplate from "@/components/emails/ContactEmailTemplate";
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const body = await request.json();
-  const { name, email, company, title, phone, message } = body;
+  const { name, email, company, title, phone, message, requestQuote } = body;
   try {
     await resend.emails.send({
       from: "suporte@mobileappdefense.com",
@@ -18,6 +18,7 @@ export async function POST(request: Request) {
         title: title,
         phone: phone,
         message: message,
+        requestQuote: requestQuote,
       }),
     });
 

@@ -5,6 +5,7 @@ export default function ContactEmailTemplate({
   title,
   phone,
   message,
+  requestQuote,
 }: {
   name: string;
   email: string;
@@ -12,6 +13,7 @@ export default function ContactEmailTemplate({
   title: string;
   phone: string;
   message: string;
+  requestQuote: boolean;
 }) {
   return (
     <div
@@ -114,6 +116,14 @@ export default function ContactEmailTemplate({
                   >
                     {phone}
                   </a>
+                </td>
+              </tr>
+              <tr>
+                <td style={{ padding: "8px 0", fontWeight: "bold" }}>
+                  Request Quote:
+                </td>
+                <td style={{ padding: "8px 0" }}>
+                  {requestQuote ? "Yes" : "No"}
                 </td>
               </tr>
             </tbody>
