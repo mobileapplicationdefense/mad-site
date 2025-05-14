@@ -18,6 +18,9 @@ export default function ContactPage() {
     message: "",
     requestQuote: false,
   });
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+  const [formError, setFormError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,16 +33,54 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, requestQuote: e.target.checked }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
-    // Show success message or redirect
-    alert("Form submitted successfully!");
+    setFormSubmitting(true);
+    setFormError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.firstName + " " + formData.lastName,
+          email: formData.email,
+          company: formData.company,
+          title: formData.title,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormSuccess(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          company: "",
+          title: "",
+          email: "",
+          phone: "",
+          message: "",
+          requestQuote: false,
+        });
+      } else {
+        setFormError(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormError("Failed to submit the form. Please try again later.");
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
-    <div className="w-full snap-start relative overflow-hidden bg-[#111418]">
+    <div className="w-full relative overflow-hidden bg-[#111418]">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -193,10 +234,26 @@ export default function ContactPage() {
           <div>
             <button
               type="submit"
-              className="bg-[#0066FF] hover:bg-[#0055DD] text-white font-medium py-3 px-8 rounded-md flex items-center transition-colors"
+              disabled={formSubmitting}
+              className={`${
+                formSubmitting
+                  ? "bg-gray-500"
+                  : "bg-[#0066FF] hover:bg-[#0055DD]"
+              } text-white font-medium py-3 px-8 rounded-md flex items-center transition-colors`}
             >
-              Submit <ArrowRight className="ml-2 h-5 w-5" />
+              {formSubmitting ? "Submitting..." : "Submit"}{" "}
+              {!formSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
             </button>
+
+            {formError && <p className="text-red-500 mt-2">{formError}</p>}
+
+            {formSuccess && (
+              <div className="mt-4 p-4 bg-green-100 text-green-800 rounded-md">
+                Thank you for your message! We've received your inquiry and will
+                get back to you shortly.
+              </div>
+            )}
+
             <p className="text-gray-400 text-xs mt-4">
               By pressing this buttom this form, you are confirming you have
               read and agree to our{" "}
