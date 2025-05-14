@@ -29,8 +29,9 @@ export default function PlatformsSection() {
     if (section) {
       const elements = section.querySelectorAll(".animate-on-scroll");
       elements.forEach((el, index) => {
-        // Add increasing delay based on index
-        el.classList.add(`delay-${index * 150}`);
+        // Add delay class based on index, with proper class names
+        const delayClass = `delay-${index * 150}`;
+        el.classList.add(delayClass);
         observer.observe(el);
       });
     }

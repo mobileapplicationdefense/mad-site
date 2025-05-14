@@ -37,8 +37,7 @@ export default function Hero() {
                 className="text-5xl md:text-6xl lg:text-7xl font-regular mb-6 leading-normal"
                 style={{ lineHeight: "1.3" }}
               >
-                We Protect <br />
-                Yourself. <br />
+                We Protect. <br />
                 <span className="flex items-center">
                   You{" "}
                   <span className="relative text-[#0066FF] border border-[#2786CD] px-4 ml-4">

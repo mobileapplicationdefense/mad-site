@@ -28,8 +28,8 @@ export default function FooterSection() {
       </div>
 
       {/* Main content */}
-      <div className="flex-grow flex items-center justify-center px-4 md:px-6">
-        <div className="w-full max-w-4xl mx-auto">
+      <div className="flex-grow flex items-center justify-center px-6 md:px-[120px]">
+        <div className="w-full mx-auto">
           <div className="bg-[#1E2530]/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-8 md:p-16 text-center animate-on-scroll">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Stop losing users,
@@ -49,11 +49,11 @@ export default function FooterSection() {
       </div>
 
       {/* Footer */}
-      <div className="container mx-auto px-4 md:px-6 pb-8 z-10">
+      <div className="container pb-8 z-10 mx-0 px-6 md:px-[120px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
           <div className="space-y-6 w-full items-center justify-center flex flex-col md:items-start">
             <MadLogo />
-            <p className="text-gray-400 text-sm max-w-md px-4 md:px-0">
+            <p className="text-gray-400 text-md max-w-md px-4 md:px-0">
               MAD (Mobile Application Defense) is a RASP (Runtime Application
               Self-Protection) cybersecurity solution developed in Brazil to
               protect mobile applications and SDKs on Android and iOS against
