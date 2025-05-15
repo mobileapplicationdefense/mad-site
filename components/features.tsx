@@ -13,18 +13,18 @@ export default function Features() {
   };
 
   return (
-    <section className="min-h-[100vh] w-full relative overflow-hidden bg-white mt-[40px] md:mt-[80px] mb-[80px]">
+    <section className="flex items-centers min-h-[100vh] w-full relative overflow-hidden bg-white mt-[40px] md:mt-[80px] mb-[80px]">
       {/* Content container with gradient background and rounded corners */}
       <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
-        {/* Background image with reduced opacity */}
+        <Image
+          src="/background.png"
+          alt="Background"
+          fill
+          className="object-cover opacity-30"
+          priority
+        />
         <div className="absolute inset-0">
-          <Image
-            src="/background.png"
-            alt="Background"
-            fill
-            className="object-cover opacity-10"
-            priority
-          />
+          <div className="absolute bottom-0 left-0 w-[50%] md:w-[400px] h-[50vh] md:h-[400px] bg-[#1c7e94]/70 blur-[80px] md:blur-[120px] rounded-full"></div>
         </div>
 
         {/* Teal/blue glow in bottom right */}
@@ -34,7 +34,7 @@ export default function Features() {
         <div className="absolute bottom-[20%] right-[30%] w-[200px] h-[200px] bg-[#00C2FF] opacity-10 blur-[100px] rounded-full"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 h-auto md:h-screen flex flex-col justify-center relative z-10">
+      <div className="container mx-auto px-4 md:px-6 py-8 h-auto flex flex-col justify-center relative z-10">
         <div className="flex flex-col justify-around md:flex-row md:items-center">
           <div className="flex flex-col md:items-center gap-4">
             {/* Left column - Heading */}
@@ -48,14 +48,20 @@ export default function Features() {
 
             {/* Middle column - Phone mockup */}
             <div className="flex justify-center md:flex-[0_0_25%] my-4 md:my-0">
-              <div className="relative w-[200px] h-[380px] md:h-[489px] md:w-[248px]">
+              <div className="relative w-[188px] h-[348px] md:w-[248px] md:h-[489px]">
                 <Image
-                  src="/mobile-screen-features.png"
+                  src="/mobile-screen-features.svg"
                   alt="Mobile app security"
-                  width={248}
-                  height={489}
-                  className="object-contain"
+                  width={570}
+                  height={635}
+                  className="object-contain w-full h-full"
+                  sizes="(max-width: 768px) 188px, 248px"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                  }}
                   priority
+                  loading="eager"
                 />
               </div>
             </div>
