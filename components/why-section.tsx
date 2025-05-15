@@ -113,15 +113,16 @@ export default function WhySection() {
                   src="/blue-character.png"
                   alt="Character"
                   fill
-                  className="object-contain opacity-70"
+                  className="object-contain opacity-90"
                 />
 
                 {/* Glow effect */}
-                <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0">
                   <Image
                     src="/glow-character.png"
                     alt="Glow effect"
-                    fill
+                    width={600}
+                    height={600}
                     className="object-contain"
                   />
                 </div>

@@ -73,12 +73,13 @@ export default function RaspSection() {
                   RASP
                 </span>
                 <Image
-                  src="/rasp-img.png"
+                  src="/rasp-img.svg"
                   alt="Mobile app security"
-                  width={470}
-                  height={520}
+                  width={570}
+                  height={635}
                   className="object-contain"
                   priority
+                  loading="eager"
                 />
               </div>
             </div>
