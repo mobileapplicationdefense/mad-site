@@ -49,8 +49,8 @@ export default function FooterSection() {
       </div>
 
       {/* Footer */}
-      <div className="container pb-8 z-10 mx-0 px-6 md:px-[120px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
+      <div className="pb-8 z-10 mx-0 px-6 md:px-[120px]">
+        <div className="flex flex-col md:flex-row gap-8 py-12 w-full md:w-1/2">
           <div className="space-y-6 w-full items-center justify-center flex flex-col md:items-start">
             <MadLogo />
             <p className="text-gray-400 text-md max-w-md px-4 md:px-0">
@@ -101,7 +101,7 @@ export default function FooterSection() {
           </div>
         </div>
 
-        <div className="text-center text-gray-500 text-sm">
+        <div className="w-full flex items-center justify-center text-gray-500 text-sm">
           &copy;2025 MAD. All Rights Reserved
         </div>
       </div>
