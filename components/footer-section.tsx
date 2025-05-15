@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import MadLogo from "./MadLogo";
 export default function FooterSection() {
   return (
-    <section className="h-screen w-full snap-start pt-8 relative overflow-hidden bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col">
+    <section className="w-full pt-8 relative bg-gradient-to-br from-[#111418] to-[#0a0e14] flex flex-col">
       <div className="absolute inset-x-4 top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] overflow-hidden">
         <Image
           src="/background.png"
@@ -31,7 +31,7 @@ export default function FooterSection() {
       <div className="flex-grow flex items-center justify-center px-6 md:px-[120px]">
         <div className="w-full mx-auto">
           <div className="bg-[#1E2530]/50 backdrop-blur-sm border border-gray-700/30 rounded-2xl p-8 md:p-16 text-center animate-on-scroll">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-regular text-white mb-6">
               Stop losing users,
               <br />
               trust, and money to
