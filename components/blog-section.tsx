@@ -14,17 +14,17 @@ const BLOG_POSTS: BlogPostProps[] = [
   {
     image: "/blog-cover-1.png",
     title: "Hacking Mobile Games",
-    slug: "https://mobile-application-defense.ghost.io/hacking-mobile-games/",
+    slug: "https://blog.mobileappdefense.com/hacking-mobile-games/",
   },
   {
     image: "/blog-cover-2.png",
     title: "Securing Flutter Application",
-    slug: "https://mobile-application-defense.ghost.io/securing-flutter-application/",
+    slug: "https://blog.mobileappdefense.com/securing-flutter-application/",
   },
   {
     image: "/blog-cover-2.png",
     title: "iOS/Android Malwares",
-    slug: "https://mobile-application-defense.ghost.io/ios-android-malwares/",
+    slug: "https://blog.mobileappdefense.com/ios-android-malwares/",
   },
 ];
 
