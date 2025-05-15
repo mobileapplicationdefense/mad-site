@@ -13,7 +13,7 @@ export default function Features() {
   };
 
   return (
-    <section className="min-h-[100vh] w-full relative overflow-hidden bg-white mt-[100px] mb-[80px]">
+    <section className="min-h-[100vh] w-full relative overflow-hidden bg-white mt-[40px] md:mt-[80px] mb-[80px]">
       {/* Content container with gradient background and rounded corners */}
       <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
         {/* Background image with reduced opacity */}
