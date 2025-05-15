@@ -4,6 +4,7 @@ import WhySection from "@/components/why-section";
 import MadSection from "@/components/mad-section";
 import FooterSection from "@/components/footer-section";
 import RaspSection from "@/components/rasp-section";
+import BlogSection from "@/components/blog-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <WhySection />
       <MadSection />
       <RaspSection />
+      <BlogSection />
       <FooterSection />
     </div>
   );
