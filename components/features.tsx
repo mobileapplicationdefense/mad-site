@@ -13,9 +13,9 @@ export default function Features() {
   };
 
   return (
-    <section className="min-h-[100vh] w-full relative overflow-hidden bg-white py-8 md:py-0">
+    <section className="min-h-[100vh] w-full relative overflow-hidden bg-white mt-[100px] mb-[80px]">
       {/* Content container with gradient background and rounded corners */}
-      <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-4 bottom-4 md:top-8 md:bottom-8 lg:top-12 lg:bottom-12 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
+      <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-12 top-0 bottom-0 bg-gradient-to-br from-[#111418] to-[#0a0e14] rounded-[40px] overflow-hidden">
         {/* Background image with reduced opacity */}
         <div className="absolute inset-0">
           <Image
@@ -40,11 +40,9 @@ export default function Features() {
             {/* Left column - Heading */}
             <div className="flex justify-center md:flex-[0_0_33%] mt-8 md:mt-0">
               <h2 className="text-3xl lg:text-4xl font-regular text-white mb-4">
-                One <span className="text-[#0066FF]">Solution</span> For
-                <br />
-                All Your App
-                <br />
-                Security Needs.
+                Complete <br />
+                <span className="text-[#0066FF]">Security</span> for Your <br />
+                App
               </h2>
             </div>
 
