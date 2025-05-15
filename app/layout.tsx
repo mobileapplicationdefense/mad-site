@@ -7,7 +7,7 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MAD - Hatbash",
-  description: "We Protect Yourself. You Grow",
+  description: "We Protect. You Grow",
 };
 
 export default function RootLayout({
