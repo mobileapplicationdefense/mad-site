@@ -22,7 +22,7 @@ const BLOG_POSTS: BlogPostProps[] = [
     slug: "https://blog.mobileappdefense.com/securing-flutter-application/",
   },
   {
-    image: "/blog-cover-2.png",
+    image: "/blog-cover-3.png",
     title: "iOS/Android Malwares",
     slug: "https://blog.mobileappdefense.com/ios-android-malwares/",
   },
