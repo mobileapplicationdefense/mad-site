@@ -6,7 +6,7 @@ import "./globals.css";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MAD - Hatbash",
+  title: "MAD - Mobile Application Defense",
   description: "We Protect. You Grow",
 };
 
