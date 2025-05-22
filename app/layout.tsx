@@ -8,6 +8,22 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "MAD - Mobile Application Defense",
   description: "We Protect. You Grow",
+  openGraph: {
+    title: "MAD - Hatbash",
+    description: "We Protect. You Grow",
+    type: "website",
+    locale: "en_US",
+    url: "https://www.mobileappdefense.com/",
+    siteName: "MAD - Hatbash",
+    images: [
+      {
+        url: "/mad-site-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "MAD - Hatbash",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
