@@ -9,18 +9,18 @@ export const metadata: Metadata = {
   title: "MAD - Mobile Application Defense",
   description: "We Protect. You Grow",
   openGraph: {
-    title: "MAD - Hatbash",
+    title: "MAD - Mobile Application Defense",
     description: "We Protect. You Grow",
     type: "website",
     locale: "en_US",
     url: "https://www.mobileappdefense.com/",
-    siteName: "MAD - Hatbash",
+    siteName: "MAD - Mobile Application Defense",
     images: [
       {
         url: "/mad-site-cover.png",
         width: 1200,
         height: 630,
-        alt: "MAD - Hatbash",
+        alt: "Mobile Application Defense",
       },
     ],
   },
